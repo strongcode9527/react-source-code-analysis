@@ -19900,6 +19900,7 @@ function scheduleWork(fiber, expirationTime) {
     interruptedBy = fiber;
     resetStack();
   }
+  // 这里设置root的最高和最低优先级的时间
   markPendingPriorityLevel(root, expirationTime);
   if (
   // If we're in the render phase, we don't need to schedule this root
@@ -20099,6 +20100,8 @@ function requestWork(root, expirationTime) {
     scheduleCallbackWithExpirationTime(root, expirationTime);
   }
 }
+
+// first => next => next => last(next => first) 更新schedule
 
 function addRootToSchedule(root, expirationTime) {
   // Add the root to the schedule.

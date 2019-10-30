@@ -672,7 +672,8 @@ function defineRefPropWarningGetter(props, displayName) {
 
 /**
  * Factory method to create a new React element. This no longer adheres to
- * the class pattern, so do not use new to call it. Also, no instanceof check
+ * the class pattern, so 
+ *  not use new to call it. Also, no instanceof check
  * will work. Instead test $$typeof field against Symbol.for('react.element') to check
  * if something is a React Element.
  *
@@ -1824,7 +1825,7 @@ function cloneElementWithValidation(element, props, children) {
 
 // These APIs will no longer be "unstable" in the upcoming 16.7 release,
 // Control this behavior with a flag to support 16.6 minor releases in the meanwhile.
-var enableStableConcurrentModeAPIs = false;
+var enableStableConcurrentModeAPIs = true;
 
 var React = {
   Children: {
